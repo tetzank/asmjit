@@ -395,7 +395,7 @@ Error JitAllocator::shrink(void* p, size_t newSize) noexcept {
   if (ASMJIT_UNLIKELY(areaNewSize > areaOldSize))
     return DebugUtils::errored(kErrorInvalidState);
 
-  uint32_t areaDiff = areaNewSize - areaOldSize;
+  uint32_t areaDiff = areaOldSize - areaNewSize;
   if (!areaDiff)
     return kErrorOk;
 
